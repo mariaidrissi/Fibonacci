@@ -1,18 +1,16 @@
 # Fibonacci
 
-## Clone le projet 
+## 1-Setup
 
-Installer virtual env sur https://pypi.org/project/virtualenv/
-## Installer flask
-```bash
-$ virtualenv flask
-$ flask/bin/pip install flask
-```
-## Installer flask_caching
-```bash
-$ flask/bin/pip install flask_caching
-```
+Install Docker : https://docs.docker.com/get-docker/
 
-## Pour executer
-$ chmod a+x app.py
-$ ./app.py
+## 2-Run
+
+### Build docker
+```bash
+$ docker build -t fibo-app:1.0 .
+```
+### Run docker
+```bash
+$ docker run -p 5000:5000 fibo-app:1.0
+```
