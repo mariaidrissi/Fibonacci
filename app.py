@@ -1,9 +1,14 @@
 #!flask/bin/python3
+
+import requests
+
 from flask import Flask, jsonify, abort, make_response
 # from flask_caching import Cache
 # import tkinter as tk
 # from tkinter import *
-import requests
+
+import back
+
 
 # interface=Tk()
 # texte=Label(interface, text='API REST Fibonacci !', fg='red')
@@ -39,12 +44,6 @@ def web_fibonacci(nb):
     #for k in cache.cache._cache:
     #    print(k, cache.get(k))
     return jsonify({'Fibonacci': fibonacci(nb)})
-
-def fibonacci(nb):
-    if(nb <= 1):
-            return nb
-    else:
-            return (fibonacci(nb-1) + fibonacci(nb-2))
 
 @app.errorhandler(404)
 def not_found(error):
